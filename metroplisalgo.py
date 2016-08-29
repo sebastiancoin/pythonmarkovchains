@@ -6,7 +6,7 @@ import scipy.stats as stats
 plt.style.use("ggplot")
 
 # Parameter values for prior and analytic posterior
-n = 50
+number= 50
 z = 10
 alpha = 12
 beta = 12
@@ -25,7 +25,7 @@ with basic_model:
     theta = pymc3.Beta("theta", alpha=alpha, beta=beta)
 
     # Define the Bernoulli likelihood function
-    y = pymc3.Binomial("y", n=n, p=theta, observed=z)
+    y = pymc3.Binomial("y", n=number, p=theta, observed=z)
 
     # Carry out the MCMC analysis using the Metropolis algorithm
     # Use Maximum A Posteriori (MAP) optimisation as initial value for MCMC
